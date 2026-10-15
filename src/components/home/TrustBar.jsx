@@ -31,7 +31,7 @@ export default function TrustBar({ benefits = DEFAULT_BENEFITS }) {
 
   return (
     <section
-      aria-label="Herbora Naturals Core Values"
+      aria-label="Amiaveda Core Values"
       className="bg-[#F7F3EB] py-8 sm:py-10 border-b border-[#30451F]/10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

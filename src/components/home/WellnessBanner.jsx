@@ -10,7 +10,7 @@ export default function WellnessBanner({ image = DEFAULT_BANNER_IMAGE }) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <section id="wellness" aria-labelledby="wellness-banner-heading" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#FAF7F2]">
+    <section id="philosophy" aria-labelledby="wellness-banner-heading" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#FAF7F2] scroll-mt-20">
       <div className="max-w-7xl mx-auto rounded-3xl bg-[#F7F3EB] border border-[#30451F]/15 overflow-hidden shadow-xs group">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
           <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 text-left space-y-4 sm:space-y-5">
@@ -33,7 +33,7 @@ export default function WellnessBanner({ image = DEFAULT_BANNER_IMAGE }) {
             <MotionReveal delay={0.24} direction="up" distance={14}>
               <p className="text-stone-700 text-sm sm:text-base leading-relaxed max-w-xl">
                 We believe everyday self-care should be grounded in authentic plant wisdom.
-                Every Herbora formulation is blended in small, thoughtful batches using time-tested
+                Every Amiaveda formulation is blended in small, thoughtful batches using time-tested
                 botanicals, packaged in UV-protective amber glass to preserve raw phytopotency.
               </p>
             </MotionReveal>
@@ -57,10 +57,10 @@ export default function WellnessBanner({ image = DEFAULT_BANNER_IMAGE }) {
                   whileHover={shouldReduceMotion ? undefined : { scale: 1.02, y: -1 }}
                   whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
                   transition={{ duration: 0.2, ease: EASING.botanical }}
-                  href="#products"
+                  href="#catalogue"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#30451F] hover:bg-[#243517] text-[#F7F3EB] font-semibold text-xs sm:text-sm shadow-xs transition-shadow duration-200 focus-visible:outline-2 focus-visible:outline-[#30451F]"
                 >
-                  <span>Explore All Formulations</span>
+                  <span>Explore Botanical Catalogue</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </motion.a>
               </div>

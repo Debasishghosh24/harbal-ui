@@ -2,58 +2,46 @@ import { useState } from 'react'
 import AnnouncementBar from './components/layout/AnnouncementBar.jsx'
 import Navbar from './components/layout/Navbar.jsx'
 import Footer from './components/layout/Footer.jsx'
-import QuickViewModal from './components/ui/QuickViewModal.jsx'
+import ProductDetailsModal from './components/catalogue/ProductDetailsModal.jsx'
+import JoinUsModal from './components/ui/JoinUsModal.jsx'
 import Home from './pages/Home.jsx'
 
 export default function App() {
-  const [cart, setCart] = useState([])
-  const [wishlist, setWishlist] = useState([])
-  const [quickViewProduct, setQuickViewProduct] = useState(null)
-
-  const handleAddToCart = (product) => {
-    setCart((prev) => [...prev, product])
-  }
-
-  const handleToggleFavorite = (product) => {
-    setWishlist((prev) =>
-      prev.some((p) => p.id === product.id)
-        ? prev.filter((p) => p.id !== product.id)
-        : [...prev, product],
-    )
-  }
+  const [selectedProduct, setSelectedProduct] = useState(null)
+  const [isJoinOpen, setIsJoinOpen] = useState(false)
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#30451F] selection:bg-[#DDE4CF] selection:text-[#30451F]">
       {/* 1. Announcement Bar */}
       <AnnouncementBar />
 
-      {/* 2. Responsive Navbar with Live Search and Counter Badges */}
+      {/* 2. Responsive Navbar with Custom Brand Logo, Live Search, & Join Us */}
       <Navbar
-        cartCount={cart.length}
-        wishlistCount={wishlist.length}
-        onSelectProduct={(p) => setQuickViewProduct(p)}
+        onSelectProduct={(p) => setSelectedProduct(p)}
+        onJoinUs={() => setIsJoinOpen(true)}
       />
 
-      {/* Main Content Flow */}
+      {/* Main Content Flow: Sections 3 to 10 */}
       <div className="grow">
-        <Home
-          onAddToCart={handleAddToCart}
-          onToggleFavorite={handleToggleFavorite}
-          onQuickView={(p) => setQuickViewProduct(p)}
-        />
+        <Home onViewDetails={(p) => setSelectedProduct(p)} />
       </div>
 
-      {/* Footer */}
+      {/* 11. Footer with Contact Information and Botanical Resources */}
       <Footer />
 
-      {/* Global Quick View Modal Dialog */}
-      {quickViewProduct && (
-        <QuickViewModal
-          product={quickViewProduct}
-          onClose={() => setQuickViewProduct(null)}
-          onAddToCart={handleAddToCart}
-          onToggleFavorite={handleToggleFavorite}
-          isFavorite={wishlist.some((p) => p.id === quickViewProduct.id)}
+      {/* Dedicated Botanical Product Details View */}
+      {selectedProduct && (
+        <ProductDetailsModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
+
+      {/* Join Amiaveda Botanical Circle Modal */}
+      {isJoinOpen && (
+        <JoinUsModal
+          isOpen={isJoinOpen}
+          onClose={() => setIsJoinOpen(false)}
         />
       )}
     </div>

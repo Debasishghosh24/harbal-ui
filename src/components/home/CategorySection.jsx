@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { EASING } from '../../utils/motion.js'
 
-export default function CategorySection() {
+export default function CategorySection({ onSelectCategory }) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
@@ -17,8 +17,8 @@ export default function CategorySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <MotionReveal delay={0.08} direction="up" distance={16}>
           <SectionHeading
-            title="Shop by Category"
-            description="Explore our range of botanical essentials."
+            title="Botanical Categories"
+            description="Explore our compendium organized by preparation method and herbal tradition."
             className="mb-10 sm:mb-12"
           />
         </MotionReveal>
@@ -28,13 +28,14 @@ export default function CategorySection() {
           {categories.map((category, index) => (
             <MotionReveal
               key={category.id}
-              delay={0.12 + index * 0.06}
+              delay={0.1 + index * 0.05}
               direction="up"
-              distance={18}
+              distance={16}
               className="h-full"
             >
               <motion.a
-                href={`#${category.slug}`}
+                href="#catalogue"
+                onClick={() => onSelectCategory && onSelectCategory(category.slug || category.name)}
                 whileHover={shouldReduceMotion ? undefined : { y: -3 }}
                 whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
                 transition={{ duration: 0.25, ease: EASING.botanical }}
@@ -58,7 +59,7 @@ export default function CategorySection() {
                   </h3>
 
                   <span className="mt-1.5 inline-flex items-center gap-1 text-xs font-medium text-[#30451F]/80 group-hover:text-[#30451F] transition-colors">
-                    <span>Shop Now</span>
+                    <span>Explore Category</span>
                     <ArrowRight
                       className="w-3 h-3 [@media(hover:hover)]:group-hover:translate-x-1 group-focus-visible:translate-x-1 transition-transform duration-200"
                       aria-hidden="true"

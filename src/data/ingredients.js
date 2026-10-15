@@ -1,4 +1,4 @@
-// Authentic botanical ingredients present in Herbora Naturals formulations
+// Authentic botanical ingredients present in Amiaveda formulations
 export const ingredients = [
   {
     id: 'ashwagandha',

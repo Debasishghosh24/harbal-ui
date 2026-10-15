@@ -1,4 +1,4 @@
-// Consistent motion timing, easing curves, and reusable variants for Herbora Naturals
+// Consistent motion timing, easing curves, and reusable variants for Amiaveda
 
 export const DURATION = {
   fast: 0.25,

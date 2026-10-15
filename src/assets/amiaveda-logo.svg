@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none">
+  <defs>
+    <!-- Muted Gold Gradients -->
+    <linearGradient id="amiavedaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D1B97C" />
+      <stop offset="50%" stop-color="#B69A58" />
+      <stop offset="100%" stop-color="#9A7F3E" />
+    </linearGradient>
+
+    <!-- Deep Forest Green Gradients -->
+    <linearGradient id="amiavedaForest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A5323" />
+      <stop offset="100%" stop-color="#243517" />
+    </linearGradient>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap');
+      .brand-title {
+        font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+        font-weight: 700;
+        font-size: 34px;
+        letter-spacing: 0.18em;
+        fill: #30451F;
+      }
+      .brand-subtitle {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-weight: 600;
+        font-size: 10px;
+        letter-spacing: 0.36em;
+        fill: #30451F;
+      }
+    </style>
+  </defs>
+
+  <!-- Group: Botanical Leaf Emblem -->
+  <g id="amiaveda-emblem" transform="translate(160, 62)">
+    <!-- Refined Muted Gold Sun / Seed Accent -->
+    <circle cx="-38" cy="-35" r="8.5" fill="url(#amiavedaGold)" />
+
+    <!-- Left Organic Stem of Capital A (flowing into botanical root flourish) -->
+    <path
+      d="M-2 -52 C-10 -24 -24 10 -46 36 C-54 44 -64 49 -74 48.5 C-75.8 48.3 -76.2 46 -74.5 45 C-67 42.5 -59 36 -51 27 C-34 6 -19 -26 -2 -52 Z"
+      fill="#30451F"
+    />
+
+    <!-- Right Leg of Capital A (sculpted serif stroke with tapered baseline foot) -->
+    <path
+      d="M-4 -52 L10 -52 L58 44 C62 50 67 52 73 52 L73 54.5 L36 54.5 L36 52 C41 52 44.5 50 42 45 L34 27 L-12 27 L-4 -52 Z"
+      fill="#30451F"
+    />
+
+    <!-- Flowing Muted Gold Branch Accent (#B69A58) -->
+    <path
+      d="M-42 24 C-26 20 -6 25 16 35 C30 42 44 50 58 51"
+      stroke="url(#amiavedaGold)"
+      stroke-width="2.8"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Primary Whole Botanical Leaf (Right) -->
+    <path
+      d="M-5 -12 C16 -25 52 -23 66 -5 C58 20 32 32 5 29 C15 15 17 1 -5 -12 Z"
+      fill="url(#amiavedaForest)"
+    />
+    <!-- Delicate leaf vein line in muted sage -->
+    <path
+      d="M-4 -10 C18 -3 41 3 65 -5"
+      stroke="#DDE4CF"
+      stroke-width="1.1"
+      stroke-linecap="round"
+      opacity="0.8"
+    />
+
+    <!-- Secondary Foliage Leaf (Upper Left) -->
+    <path
+      d="M-25 -16 C-45 -30 -61 -21 -63 0 C-48 12 -29 5 -15 -7 C-19 -11 -21 -14 -25 -16 Z"
+      fill="#30451F"
+    />
+
+    <!-- Secondary Foliage Leaf (Lower Left) -->
+    <path
+      d="M-40 8 C-58 10 -68 24 -63 38 C-47 34 -36 24 -32 13 C-36 11 -38 9 -40 8 Z"
+      fill="#3D5627"
+    />
+
+    <!-- Center Intertwining Leaflet -->
+    <path
+      d="M-10 13 C-3 0 9 4 15 15 C8 21 -3 20 -10 13 Z"
+      fill="#5A6F3B"
+    />
+  </g>
+
+  <!-- Wordmark: AMIAVEDA -->
+  <g id="amiaveda-wordmark" transform="translate(160, 154)">
+    <text class="brand-title" x="0" y="0" text-anchor="middle">AMIAVEDA</text>
+    <!-- Refined botanical leaf tucked in first A crossbar -->
+    <path
+      d="M-121 -9 C-118 -16 -112 -18 -110 -15 C-110 -10 -115 -7 -121 -9 Z"
+      fill="#3D5627"
+    />
+  </g>
+
+  <!-- Subtitle: NATURAL WELLNESS with Symmetrical Muted Gold Hairline Rules -->
+  <g id="amiaveda-subtitle" transform="translate(160, 182)">
+    <!-- Left Hairline Rule -->
+    <line x1="-142" y1="-3.5" x2="-86" y2="-3.5" stroke="#B69A58" stroke-width="1.1" stroke-linecap="round" />
+
+    <!-- Subtitle Text -->
+    <text class="brand-subtitle" x="0" y="0" text-anchor="middle">NATURAL WELLNESS</text>
+
+    <!-- Right Hairline Rule -->
+    <line x1="86" y1="-3.5" x2="142" y2="-3.5" stroke="#B69A58" stroke-width="1.1" stroke-linecap="round" />
+  </g>
+</svg>

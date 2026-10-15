@@ -1,23 +1,22 @@
-import { Leaf, Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
+import BrandLogo from '../ui/BrandLogo.jsx'
 import MotionReveal from '../ui/MotionReveal.jsx'
 
-const QUICK_LINKS = [
-  { name: 'Shop All', href: '#products' },
-  { name: 'Best Sellers', href: '#products' },
-  { name: 'Shop by Concern', href: '#concerns' },
+const CATALOGUE_LINKS = [
+  { name: 'Product Catalogue', href: '#catalogue' },
   { name: 'Botanical Ingredients', href: '#ingredients' },
-  { name: 'Categories', href: '#categories' },
-  { name: 'Our Philosophy', href: '#why-us' },
+  { name: 'Herbal Categories', href: '#categories' },
+  { name: 'Sourcing & Quality', href: '#sourcing' },
+  { name: 'Apothecary Philosophy', href: '#philosophy' },
 ]
 
-const CUSTOMER_SERVICE_LINKS = [
-  { name: 'My Account', href: '#' },
-  { name: 'Track Order', href: '#' },
-  { name: 'Shipping Policy', href: '#' },
-  { name: 'Returns & Refunds', href: '#' },
-  { name: 'FAQs', href: '#' },
-  { name: 'Support', href: '#' },
+const BOTANICAL_RESOURCES = [
+  { name: 'Herbarium Index', href: '#ingredients' },
+  { name: 'Formulation Profiles', href: '#catalogue' },
+  { name: 'Ethical Harvesting', href: '#sourcing' },
+  { name: 'Botanical Inquiries', href: 'mailto:care@amiaveda.com' },
+  { name: 'Apothecary Standards', href: '#philosophy' },
 ]
 
 const SOCIAL_LINKS = [
@@ -34,12 +33,6 @@ const SOCIAL_LINKS = [
       'M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z',
   },
   {
-    name: 'X (Twitter)',
-    href: '#',
-    svgPath:
-      'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
-  },
-  {
     name: 'Pinterest',
     href: '#',
     svgPath:
@@ -51,27 +44,15 @@ export default function Footer() {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <footer className="bg-[#F7F3EB] text-[#30451F] pt-14 pb-10 sm:pt-18 sm:pb-12 border-t border-[#30451F]/10">
+    <footer className="bg-[#F7F3EB] text-[#30451F] pt-14 pb-10 sm:pt-16 sm:pb-12 border-t border-[#30451F]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <MotionReveal variant="fadeIn" delay={0.04} duration={0.35}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-12">
-            {/* Column 1: Brand Info */}
+            {/* Column 1: Brand Info with BrandLogo */}
             <div className="space-y-4 text-left">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F] rounded-md"
-                aria-label="HERBORA NATURALS Homepage"
-              >
-                <div className="w-8 h-8 rounded-full bg-[#30451F] text-[#F7F3EB] flex items-center justify-center shadow-2xs group-hover:bg-[#243517] transition-transform duration-200 group-hover:scale-105">
-                  <Leaf className="w-4 h-4 text-[#DDE4CF]" aria-hidden="true" />
-                </div>
-                <span className="font-serif text-lg font-bold tracking-wider text-[#30451F] uppercase leading-none">
-                  HERBORA NATURALS
-                </span>
-              </a>
+              <BrandLogo size="md" />
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed max-w-xs">
-                Thoughtfully curated botanical essentials and herbal remedies handcrafted for
-                your everyday wellness and natural self-care rituals.
+                A non-commercial curated archive of traditional herbal botanicals, single-origin extracts, and Ayurvedic compendia.
               </p>
               <div className="flex items-center gap-2.5 pt-1">
                 {SOCIAL_LINKS.map((s) => (
@@ -81,8 +62,8 @@ export default function Footer() {
                     whileHover={shouldReduceMotion ? undefined : { scale: 1.08, y: -1 }}
                     whileTap={shouldReduceMotion ? undefined : { scale: 0.92 }}
                     transition={{ duration: 0.15 }}
-                    aria-label={`Herbora Naturals on ${s.name}`}
-                    className="w-8 h-8 rounded-full bg-[#DDE4CF]/50 text-[#30451F] hover:bg-[#30451F] hover:text-[#F7F3EB] flex items-center justify-center transition-colors duration-200 border border-[#30451F]/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
+                    aria-label={`Amiaveda on ${s.name}`}
+                    className="w-8 h-8 rounded-full bg-[#DDE4CF]/50 text-[#30451F] hover:bg-[#30451F] hover:text-[#F7F3EB] flex items-center justify-center transition-colors duration-200 border border-[#30451F]/15 focus-visible:outline-2 focus-visible:outline-[#30451F]"
                   >
                     <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path d={s.svgPath} />
@@ -92,17 +73,17 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Column 2: Quick Links */}
+            {/* Column 2: Catalogue Navigation */}
             <div className="text-left">
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#30451F] mb-4">
-                Quick Links
+                Catalogue
               </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm text-stone-600">
-                {QUICK_LINKS.map((link) => (
+                {CATALOGUE_LINKS.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="hover:text-[#30451F] hover:underline underline-offset-4 decoration-[#30451F]/30 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
+                      className="hover:text-[#30451F] hover:underline underline-offset-4 decoration-[#30451F]/30 transition-colors focus-visible:outline-2 focus-visible:outline-[#30451F]"
                     >
                       {link.name}
                     </a>
@@ -111,17 +92,17 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Customer Service */}
+            {/* Column 3: Botanical Resources */}
             <div className="text-left">
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#30451F] mb-4">
-                Customer Service
+                Resources
               </h3>
               <ul className="space-y-2.5 text-xs sm:text-sm text-stone-600">
-                {CUSTOMER_SERVICE_LINKS.map((link) => (
+                {BOTANICAL_RESOURCES.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="hover:text-[#30451F] hover:underline underline-offset-4 decoration-[#30451F]/30 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
+                      className="hover:text-[#30451F] hover:underline underline-offset-4 decoration-[#30451F]/30 transition-colors focus-visible:outline-2 focus-visible:outline-[#30451F]"
                     >
                       {link.name}
                     </a>
@@ -133,19 +114,19 @@ export default function Footer() {
             {/* Column 4: Contact */}
             <div className="text-left space-y-3">
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#30451F] mb-4">
-                Contact Us
+                Apothecary Inquiries
               </h3>
               <div className="space-y-2.5 text-xs sm:text-sm text-stone-600">
                 <a
-                  href="mailto:care@herboranaturals.com"
-                  className="flex items-start gap-2 hover:text-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
+                  href="mailto:care@amiaveda.com"
+                  className="flex items-start gap-2 hover:text-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-[#30451F]"
                 >
                   <Mail className="w-4 h-4 text-[#30451F] shrink-0 mt-0.5" aria-hidden="true" />
-                  <span>care@herboranaturals.com</span>
+                  <span>care@amiaveda.com</span>
                 </a>
                 <a
                   href="tel:18005550199"
-                  className="flex items-start gap-2 hover:text-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
+                  className="flex items-start gap-2 hover:text-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-[#30451F]"
                 >
                   <Phone className="w-4 h-4 text-[#30451F] shrink-0 mt-0.5" aria-hidden="true" />
                   <span>+1 (800) 555-0199</span>
@@ -159,27 +140,18 @@ export default function Footer() {
           </div>
         </MotionReveal>
 
-        {/* Bottom Bar: Copyright & Legal Links */}
+        {/* Bottom Bar: Copyright & Botanical Disclaimers */}
         <div className="pt-8 border-t border-[#30451F]/10 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-600 gap-4">
-          <p>© 2026 HERBORA NATURALS. All rights reserved.</p>
+          <p>© 2026 AMIAVEDA. Curated Product Catalogue.</p>
           <div className="flex flex-wrap items-center gap-5 sm:gap-6">
-            <a
-              href="#"
-              className="hover:text-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
-            >
-              Privacy Policy
+            <a href="#" className="hover:text-[#30451F] transition-colors">
+              Botanical Disclaimers
             </a>
-            <a
-              href="#"
-              className="hover:text-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
-            >
-              Terms of Service
+            <a href="#" className="hover:text-[#30451F] transition-colors">
+              Privacy Notice
             </a>
-            <a
-              href="#"
-              className="hover:text-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
-            >
-              Cookie Policy
+            <a href="#" className="hover:text-[#30451F] transition-colors">
+              Terms of Use
             </a>
           </div>
         </div>

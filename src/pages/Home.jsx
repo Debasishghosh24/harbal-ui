@@ -2,54 +2,37 @@ import HeroSection from '../components/home/HeroSection.jsx'
 import TrustBar from '../components/home/TrustBar.jsx'
 import CategorySection from '../components/home/CategorySection.jsx'
 import BestSellersSection from '../components/home/BestSellersSection.jsx'
-import ShopByConcern from '../components/home/ShopByConcern.jsx'
 import IngredientStorytelling from '../components/home/IngredientStorytelling.jsx'
-import WhyChooseUs from '../components/home/WhyChooseUs.jsx'
 import WellnessBanner from '../components/home/WellnessBanner.jsx'
-import TestimonialsSection from '../components/home/TestimonialsSection.jsx'
-import NewsletterSection from '../components/home/NewsletterSection.jsx'
+import WhyChooseUs from '../components/home/WhyChooseUs.jsx'
+import CatalogueCtaSection from '../components/home/CatalogueCtaSection.jsx'
 
-export default function Home({ onAddToCart, onToggleFavorite, onQuickView }) {
+export default function Home({ onViewDetails }) {
   return (
     <main className="w-full">
-      {/* 3. Hero Section */}
+      {/* 3. Premium Botanical Hero Section */}
       <HeroSection />
 
-      {/* 4. Trust Bar */}
+      {/* 4. Brand Quality and Trust Highlights */}
       <TrustBar />
 
-      {/* 5. Category Section */}
+      {/* 5. Product Categories */}
       <CategorySection />
 
-      {/* 6. Best Sellers Section with Filter Tabs */}
-      <BestSellersSection
-        onAddToCart={onAddToCart}
-        onToggleFavorite={onToggleFavorite}
-        onQuickView={onQuickView}
-      />
+      {/* 6. Featured Herbal Product Catalogue */}
+      <BestSellersSection onViewDetails={onViewDetails} />
 
-      {/* 7. Shop by Concern Discovery */}
-      <ShopByConcern
-        onAddToCart={onAddToCart}
-        onQuickView={onQuickView}
-      />
+      {/* 7. Key Botanical Ingredients */}
+      <IngredientStorytelling onViewDetails={onViewDetails} />
 
-      {/* 8. Sourced from the Earth - Ingredient Storytelling */}
-      <IngredientStorytelling
-        onQuickView={onQuickView}
-      />
-
-      {/* 9. Why Choose Us */}
-      <WhyChooseUs />
-
-      {/* 10. Wellness Banner - Brand Heritage & Philosophy */}
+      {/* 8. Brand Story and Philosophy */}
       <WellnessBanner />
 
-      {/* 11. Testimonials Section */}
-      <TestimonialsSection />
+      {/* 9. Quality and Sourcing Information */}
+      <WhyChooseUs />
 
-      {/* 12. Newsletter Section */}
-      <NewsletterSection />
+      {/* 10. Catalogue Exploration CTA */}
+      <CatalogueCtaSection />
     </main>
   )
 }

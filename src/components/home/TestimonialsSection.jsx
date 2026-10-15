@@ -10,7 +10,7 @@ const TESTIMONIALS = [
     name: 'Dr. Evelyn Martinez',
     title: 'Integrative Wellness Practitioner',
     comment:
-      'Herbora Naturals sets a high benchmark for botanical purity. Their Ashwagandha root extract has become a staple recommendation for patients seeking natural daily balance.',
+      'Amiaveda sets a high benchmark for botanical purity. Their Ashwagandha root extract has become a staple recommendation for patients seeking natural daily balance.',
     rating: 5,
     product: 'Ashwagandha Capsules',
     verified: true,
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
         <MotionReveal delay={0.08} direction="up" distance={16}>
           <SectionHeading
             title="Loved by Our Community"
-            description="Read experiences from people who have made Herbora Naturals part of their daily wellness rituals."
+            description="Read experiences from people who have made Amiaveda part of their daily wellness rituals."
             className="mb-10 sm:mb-14"
           />
         </MotionReveal>

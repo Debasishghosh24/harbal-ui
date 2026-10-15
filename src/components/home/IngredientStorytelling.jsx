@@ -4,12 +4,14 @@ import { ingredients } from '../../data/ingredients.js'
 import { products } from '../../data/products.js'
 import { Leaf, ArrowUpRight } from 'lucide-react'
 
-export default function IngredientStorytelling({ onQuickView }) {
+export default function IngredientStorytelling({ onViewDetails, onQuickView }) {
+  const handleView = onViewDetails || onQuickView
+
   return (
     <section
       id="ingredients"
       aria-labelledby="ingredients-heading"
-      className="py-14 sm:py-20 bg-[#F7F3EB] border-b border-[#30451F]/10"
+      className="py-14 sm:py-20 bg-[#F7F3EB] border-b border-[#30451F]/10 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <MotionReveal delay={0.08} direction="up" distance={16}>
@@ -69,11 +71,11 @@ export default function IngredientStorytelling({ onQuickView }) {
                     <button
                       type="button"
                       onClick={() => {
-                        if (relatedProduct && onQuickView) onQuickView(relatedProduct)
+                        if (relatedProduct && handleView) handleView(relatedProduct)
                       }}
-                      className="w-full inline-flex items-center justify-between px-3 py-2 rounded-xl bg-[#DDE4CF]/40 hover:bg-[#DDE4CF] text-[#30451F] text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-[#30451F]"
+                      className="w-full inline-flex items-center justify-between px-3 py-2 rounded-xl bg-[#DDE4CF]/40 hover:bg-[#DDE4CF] text-[#30451F] text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-[#30451F] cursor-pointer"
                     >
-                      <span className="truncate">In: {item.relatedProductName}</span>
+                      <span className="truncate">View in: {item.relatedProductName}</span>
                       <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                     </button>
                   </div>

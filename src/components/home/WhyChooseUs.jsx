@@ -35,9 +35,9 @@ export default function WhyChooseUs() {
 
   return (
     <section
-      id="why-us"
+      id="sourcing"
       aria-labelledby="why-choose-heading"
-      className="py-14 sm:py-20 bg-[#F7F3EB] border-b border-[#30451F]/10"
+      className="py-14 sm:py-20 bg-[#F7F3EB] border-b border-[#30451F]/10 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
             <MotionReveal delay={0.08} direction="up" distance={14}>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DDE4CF]/70 text-[#30451F] text-xs font-semibold uppercase tracking-wider border border-[#30451F]/15">
                 <Leaf className="w-3.5 h-3.5 text-[#30451F]" aria-hidden="true" />
-                WHY CHOOSE HERBORA
+                WHY CHOOSE AMIAVEDA
               </span>
             </MotionReveal>
 
@@ -69,10 +69,10 @@ export default function WhyChooseUs() {
             <MotionReveal delay={0.32} direction="up" distance={12}>
               <div className="pt-2">
                 <a
-                  href="#products"
+                  href="#catalogue"
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#30451F] hover:text-[#243517] underline underline-offset-4 decoration-[#30451F]/30 hover:decoration-[#30451F] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#30451F]"
                 >
-                  Learn more about our botanical philosophy
+                  Explore our verified botanical catalogue
                 </a>
               </div>
             </MotionReveal>
